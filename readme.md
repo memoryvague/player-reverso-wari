@@ -1,0 +1,1 @@
+Player de vídeo do álbum Reverso da WARI, utilizando HTML, CSS e JavaScript.
