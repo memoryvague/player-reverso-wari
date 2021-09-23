@@ -27,8 +27,8 @@ body {
 }
 
 .video-box {
-    background-color: rgba(0, 0, 0, 0.9);
-    flex: 1 1 80%;
+    background-color: #000;
+    flex: 1;
     display: flex;;
 }
 
@@ -37,8 +37,8 @@ body {
 }
 
 #playlist {
-    background-color: rgb(0, 0, 0, 0.4);
-    flex: 1 1 20%;
+    background-color: rgb(0, 0, 0, 0.3);
+    flex: 0 0 280px;
     display: flex;
     align-items: center;
 }
@@ -66,7 +66,7 @@ body {
 }
 
 #playlist ul li:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .numero {
@@ -91,12 +91,45 @@ body {
     padding: 20px;
 }
 
+.progresso {
+    display: flex;
+}
+
+#barra-progresso {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+#timer-trilho {
+    width: 100%;
+    color: #fff;
+    background-color: #fff;
+}
+
+#timer-barra {
+    width: 0%;
+    color: #fff;
+    background-color: #fff;
+    height: 6px;
+    margin-top: -4px;
+    transition: width 0.15s;
+}
+
+#timer, #timer-duracao {
+    flex: 0 0 auto;
+    font-size: 0.8em;
+}
+
 .botoes {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    margin-top: 20px;
+    margin-top: 12px;
+    padding: 0 3px;
 }
 
 .botoes-reproducao {
@@ -119,16 +152,3 @@ button #play, #pause{
     cursor: pointer;
 }
 
-.linha1 {
-    width: 100%;
-    color: #fff;
-    background-color: #fff;
-}
-
-.linha2 {
-    width: 50%;
-    color: #fff;
-    background-color: #fff;
-    height: 6px;
-    margin-top: -4px;
-}

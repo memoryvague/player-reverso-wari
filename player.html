@@ -14,7 +14,7 @@
 
         <section class="video-box">
             <video id="playerVideo" teste="20" controlsList="nodownload">
-                <source id="source" src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                <source id="source" src="" type="video/mp4">
             </video>
         </section>
     
@@ -82,7 +82,7 @@
                         <div class="numero">8.</div> Man Lost In Time
                         <div class="icone-bars"></div>
                     </div>
-                    <div class="duracao">4:14</div>
+                    <div class="duracao">4:41</div>
                 </li>
                 <li id="glitch-girlzzz" url="https://lunawd.com/portfolio/player-reverso-wari/videos/glitch-girlzzz.mp4" 
                 onclick="selecionarVideo(this.id)">
@@ -111,7 +111,7 @@
                 <li id="higher-ground" url="https://lunawd.com/portfolio/player-reverso-wari/videos/higher-ground.mp4" 
                 onclick="selecionarVideo(this.id)">
                     <div class="musica">
-                        <div class="numero">12.</div> higher Ground
+                        <div class="numero">12.</div> Higher Ground
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">3:46</div>
@@ -123,9 +123,13 @@
 
     <footer id="controles">
         <div class="area-controles">
-            <div w-progresso="playerVideo" class="barra-progresso">
-                <hr class="linha1">
-                <hr class="linha2">
+            <div w-progresso="playerVideo" class="progresso">
+                <span id="timer">00:00</span>
+                <div id="barra-progresso">
+                    <hr id="timer-trilho">
+                    <hr id="timer-barra">
+                </div>
+                <span id="timer-duracao">00:00</span>
             </div>
 
             <div class="botoes">
