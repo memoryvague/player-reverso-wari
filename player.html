@@ -13,93 +13,105 @@
     <div class="container">
 
         <section class="video-box">
-            <video id="playerVideo" teste="20"  controlsList="nodownload">
-                <source id="source" src="https://lunawd.com/portfolio/player-reverso-wari/videos/mandrake.mp4" type="video/mp4">
+            <video id="playerVideo" teste="20" controlsList="nodownload">
+                <source id="source" src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
             </video>
         </section>
     
         <aside id="playlist">
-            <ul>
-                <li>
+            <ul id="lista">
+                <li id="l-l" url="https://lunawd.com/portfolio/player-reverso-wari/videos/l-l.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">1.</div> L = L
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">1:51</div>
                 </li>
-                <li>
+                <li id="land" url="https://lunawd.com/portfolio/player-reverso-wari/videos/land.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">2.</div> Land
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">3:37</div>
                 </li>
-                <li>
+                <li id="mandrake" url="https://lunawd.com/portfolio/player-reverso-wari/videos/mandrake.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">3.</div> Mandrake
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">2:21</div>
                 </li>
-                <li>
+                <li id="how-could" url="https://lunawd.com/portfolio/player-reverso-wari/videos/how-could.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">4.</div> How Could
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">4:44</div>
                 </li>
-                <li>
+                <li id="stone" url="https://lunawd.com/portfolio/player-reverso-wari/videos/stone.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">5.</div> Stone
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">3:17</div>
                 </li>
-                <li>
+                <li id="lost-path" url="https://lunawd.com/portfolio/player-reverso-wari/videos/lost-path.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">6.</div> Lost Path
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">2:51</div>
                 </li>
-                <li>
+                <li id="reverso" url="https://lunawd.com/portfolio/player-reverso-wari/videos/reverso.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">7.</div> Reverso
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">3:14</div>
                 </li>
-                <li source="./videos/mandrake.mp4">
+                <li id="man-lost-in-time" url="https://lunawd.com/portfolio/player-reverso-wari/videos/man-lost-in-time.mp4" 
+                    onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">8.</div> Man Lost In Time
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">4:14</div>
                 </li>
-                <li>
+                <li id="glitch-girlzzz" url="https://lunawd.com/portfolio/player-reverso-wari/videos/glitch-girlzzz.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">9.</div> Glitch Girlzzz
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">1:53</div>
                 </li>
-                <li>
+                <li id="robota" url="https://lunawd.com/portfolio/player-reverso-wari/videos/robota.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">10.</div> Robota
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">4:01</div>
                 </li>
-                <li>
+                <li id="expander" url="https://lunawd.com/portfolio/player-reverso-wari/videos/expander.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
                         <div class="numero">11.</div> Expander
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">3:05</div>
                 </li>
-                <li>
+                <li id="higher-ground" url="https://lunawd.com/portfolio/player-reverso-wari/videos/higher-ground.mp4" 
+                onclick="selecionarVideo(this.id)">
                     <div class="musica">
-                        <div class="numero">12.</div> How Could
+                        <div class="numero">12.</div> higher Ground
                         <div class="icone-bars"></div>
                     </div>
                     <div class="duracao">3:46</div>
@@ -134,5 +146,5 @@
         </div>
     </footer>
 </body>
-<script src="player.js"></script>
+<script src="player.js" type="text/javascript"></script>
 </html>

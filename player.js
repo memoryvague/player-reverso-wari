@@ -1,21 +1,28 @@
-function configurarVideo(id) {
-    const video = document.getElementById(id)
-    const botaoPlay = document.querySelector(`[w-play=${id}]`)
-    
-    const source = document.getElementById('source')
-    const src = source.getAttribute("src")
-    const playlist = document.getElementsByTagName("li")
-    
-    botaoPlay.onclick =
-    function playPause() {
+const video = document.getElementById('playerVideo')
+const botaoPlay = document.querySelector('[w-play]')
+const imgBtPause = '<img src="./imgs/pause.svg" width="35" alt="pause" id="pause">'
+const imgBtPlay = '<img src="./imgs/play.svg" width="35" alt="play" id="play">'
+
+configurarVideo()
+
+function configurarVideo() {
+    botaoPlay.onclick = function playPause() {
         if(video.paused) {
-            botaoPlay.innerHTML = '<img src="./imgs/pause.svg" width="35" alt="pause" id="pause">'
+            botaoPlay.innerHTML = imgBtPause
             video.play()
         } else {
-            botaoPlay.innerHTML = '<img src="./imgs/play.svg" width="35" alt="play" id="play">'
+            botaoPlay.innerHTML = imgBtPlay
             video.pause()
         }
     }    
 }
 
-configurarVideo('playerVideo')
+function selecionarVideo(id) {
+    const elemento = document.getElementById(id)
+    const url = elemento.getAttribute('url')
+    const source = document.getElementById('source')
+    source.setAttribute('src', url)
+    video.load()
+    video.play()
+    botaoPlay.innerHTML = imgBtPause   
+}
