@@ -75,6 +75,14 @@ body {
     margin-right: 10px;
 }
 
+#lottie-bars, .icone-bars {
+    display: inline-block;
+}
+
+#lottie-bars {
+    height: 15px;
+}
+
 #controles {
     background-color: rgb(0, 0, 0, 0.7);
     width: 100%;

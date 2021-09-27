@@ -27,11 +27,36 @@ function selecionarVideo(id) {
     const elemento = document.getElementById(id)
     const url = elemento.getAttribute('url')
     const source = document.getElementById('source')
+    const iconeBars = document.querySelector('#' + id + ' .musica > .icone-bars')
+    console.log(iconeBars)
+    
     source.setAttribute('src', url)
     video.load()
     video.play()
     botaoPlay.innerHTML = imgBtPause
+    elemento.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
+    iconeBars.innerHTML = '<lottie-player id="lottie-bars" src="imgs/soundbars.json" background="transparent" speed="1"  loop autoplay></lottie-player>'
+
+    const lis = Array.from(document.getElementsByTagName('li'))
+
+    lis.forEach(element => {
+        if (element != elemento) {
+            element.style.backgroundColor = "rgba(0, 0, 0, 0)"
+            let id = element.getAttribute('id')
+            document.querySelector('#' + id + ' .musica > .icone-bars').innerHTML = ""
+        }
+    })
 }
+
+/* function destaqueVideo() {
+    console.log(src)
+
+    if (src == url) {
+        elemento.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
+    } else {
+        elemento.style.backgroundColor = "none"
+    }
+} */
 
 video.addEventListener('timeupdate', progressoVideo)
 
@@ -79,6 +104,6 @@ function progressoVideo() {
     timerDuracao.textContent = duracaoVideo
 
     let larguraBarra = 100 * (video.currentTime / video.duration)
-    console.log(larguraBarra)
     timerBarra.style.width = larguraBarra + '%'
 }
+
