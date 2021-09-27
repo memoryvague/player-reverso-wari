@@ -9,6 +9,12 @@ const timerBarra = document.getElementById('timer-barra')
 const timerDuracao = document.getElementById('timer-duracao')
 const barraProgresso = document.getElementById('barra-progresso')
 
+const videos = document.getElementsByTagName( "li" )
+const videos_url = []
+for(var i = 0; i < videos.length; i++)
+    videos_url[i] = (videos[i].getAttribute('url'))
+
+
 configurarVideo()
 
 function configurarVideo() {
@@ -107,3 +113,14 @@ function progressoVideo() {
     timerBarra.style.width = larguraBarra + '%'
 }
 
+function autostart() {
+    const source = document.getElementById('source')
+    const url = document.getElementById('source').getAttribute('src')
+    let videoatual_index = videos_url.indexOf(url)
+    if (videoatual_index >= 0 && videoatual_index < videos_url.length ) {
+	source.setAttribute('src',videos_url[videoatual_index+1])
+	video.load()
+	video.play()
+    }
+
+}
