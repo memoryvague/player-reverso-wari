@@ -41,7 +41,8 @@ function selecionarVideo(id) {
 
     lis.forEach(element => {
         if (element != elemento) {
-            element.style.backgroundColor = "rgba(0, 0, 0, 0)"
+            let fundo = document.querySelector()
+            element.style.backgroundColor = "transparent"
             let id = element.getAttribute('id')
             document.querySelector('#' + id + ' .musica > .icone-bars').innerHTML = ""
         }
