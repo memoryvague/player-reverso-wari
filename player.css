@@ -109,6 +109,7 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: 0 10px;
+    cursor: pointer;
 }
 
 #timer-trilho {

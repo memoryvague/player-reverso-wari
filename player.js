@@ -34,7 +34,6 @@ function selecionarVideo(id) {
     const url = elemento.getAttribute('url')
     const source = document.getElementById('source')
     const iconeBars = document.querySelector('#' + id + ' .musica > .icone-bars')
-    console.log(iconeBars)
     
     source.setAttribute('src', url)
     video.load()
@@ -47,23 +46,27 @@ function selecionarVideo(id) {
 
     lis.forEach(element => {
         if (element != elemento) {
-            let fundo = document.querySelector()
-            element.style.backgroundColor = "transparent"
+            element.style.backgroundColor = "rgba(0, 0, 0, 0)"
             let id = element.getAttribute('id')
             document.querySelector('#' + id + ' .musica > .icone-bars').innerHTML = ""
         }
     })
 }
 
-/* function destaqueVideo() {
-    console.log(src)
+/*
+video.addEventListener('play', () => {
 
-    if (src == url) {
-        elemento.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
-    } else {
-        elemento.style.backgroundColor = "none"
-    }
-} */
+    const urlSource = source.getAttribute('src')
+
+    lista.forEach(element => {
+        const url = element.getAttribute('url')
+        console.log()
+        if (urlSource == url) {
+            element.style.backgroundColor = "rgba(0, 0, 0, 0.4)"
+        }
+    })
+}) 
+*/
 
 video.addEventListener('timeupdate', progressoVideo)
 
@@ -113,6 +116,13 @@ function progressoVideo() {
     let larguraBarra = 100 * (video.currentTime / video.duration)
     timerBarra.style.width = larguraBarra + '%'
 }
+
+
+// Barra de Progresso alterável pelo clique
+barraProgresso.addEventListener('click', (e) => {
+    const tempoProgresso = (e.offsetX / barraProgresso.offsetWidth) * video.duration
+    video.currentTime = tempoProgresso
+})
 
 function autostart() {
     const source = document.getElementById('source')
