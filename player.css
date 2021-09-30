@@ -60,13 +60,22 @@ body {
     transition: all 0.4s;
 }
 
+.lista-descelecionada {
+    background-color: rgba(0, 0, 0, 0.0);
+
+}
+
+.musica-selecionada {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 #playlist ul li:nth-child(12) {
     border-bottom: 0;
 
 }
 
 #playlist ul li:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .numero {
@@ -75,11 +84,21 @@ body {
     margin-right: 10px;
 }
 
-#lottie-bars, .icone-bars {
+.icone-bars {
     display: inline-block;
 }
 
-#lottie-bars {
+.lottie-bars-show {
+    opacity: 1;
+    transition: opacity .1s linear;
+}
+
+.lottie-bars-none {
+    opacity: 0;
+    transition: opacity .1s linear;
+}
+
+lottie-player {
     height: 15px;
 }
 
