@@ -7,6 +7,9 @@ const timer = document.getElementById('timer')
 const timerBarra = document.getElementById('timer-barra')
 const timerDuracao = document.getElementById('timer-duracao')
 const barraProgresso = document.getElementById('barra-progresso')
+const btVolume = document.querySelector('.btVolume')
+const barraVolume = document.querySelector('.barra-volume')
+const barraVolumeFilled = document.querySelector('.barra-volume-filled')
 
 const videos = document.getElementsByTagName( "li" )
 const videos_url = []
@@ -26,6 +29,8 @@ function configurarVideo() {
             video.pause()
         }
     }
+    video.volume = 0.7
+    barraVolumeFilled.style.width = '70%'
 }
 
 function selecionarVideo(id) {
@@ -123,6 +128,8 @@ function progressoVideo() {
 barraProgresso.addEventListener('click', (e) => {
     const tempoProgresso = (e.offsetX / barraProgresso.offsetWidth) * video.duration
     video.currentTime = tempoProgresso
+    let larguraBarra = 100 * (video.currentTime / video.duration)
+    timerBarra.style.width = larguraBarra + '%'
 })
 
 function autostart() {
@@ -136,3 +143,22 @@ function autostart() {
 	    video.play()
     }
 }
+
+// Controles de Volume
+btVolume.addEventListener('click', function(e) {
+    if (video.volume > 0) {
+        video.volume = 0
+        btVolume.innerHTML = '<img src="./imgs/volume-mute.svg" alt="mudo">'
+    } else {
+        let qtdVolumeAtual = barraVolumeFilled.offsetWidth / 100
+        video.volume = qtdVolumeAtual
+        btVolume.innerHTML = '<img src="./imgs/volume.svg" alt="volume">'
+    }
+})
+
+//Controle Barra de Volume
+barraVolume.addEventListener('click', function(e) {
+    let qtdVolume = (e.offsetX / barraVolume.offsetWidth)
+    video.volume = qtdVolume
+    barraVolumeFilled.style.width = (qtdVolume * 100) + '%'
+})
