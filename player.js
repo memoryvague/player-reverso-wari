@@ -171,6 +171,7 @@ function tocaProximo() {
 	source.setAttribute('src',videos_url[videoatual_index+1])
 	video.load()
 	video.play()
+	botaoPlay.innerHTML = imgBtPause
     }
 
 }
@@ -182,6 +183,7 @@ function tocaAnterior() {
 	source.setAttribute('src',videos_url[videoatual_index-1])
 	video.load()
 	video.play()
+	botaoPlay.innerHTML = imgBtPause
     }
 }
 
