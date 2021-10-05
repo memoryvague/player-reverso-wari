@@ -175,6 +175,20 @@ function tocaProximo() {
     }
 
 }
+
+function tocaProximo() {
+    const source = document.getElementById('source')
+    const url = document.getElementById('source').getAttribute('src')
+    let videoatual_index = videos_url.indexOf(url)
+    if (videoatual_index >= 0 && videoatual_index < (videos_url.length - 1) ) {
+	source.setAttribute('src',videos_url[videoatual_index+1])
+	video.load()
+	video.play()
+	botaoPlay.innerHTML = imgBtPause
+    }
+
+}
+
 function tocaAnterior() {
     const source = document.getElementById('source')
     const url = document.getElementById('source').getAttribute('src')
@@ -186,4 +200,6 @@ function tocaAnterior() {
 	botaoPlay.innerHTML = imgBtPause
     }
 }
+
+
 
