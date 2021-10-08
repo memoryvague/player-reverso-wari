@@ -17,30 +17,33 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    height: calc(100% - 150px);
-
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    grid-template-rows: 1fr 150px;
+    grid-template-areas: 
+        "video playlist"
+        "controles controles";
 }
 
 .video-box {
+    grid-area: video;
     background-color: #000;
-    flex: 1;
-    display: flex;;
+    display: flex;
+    overflow: hidden;
 }
 
 .video-box video {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 #playlist {
+    overflow: auto;
     background-color: rgb(0, 0, 0, 0.3);
-    flex: 0 0 280px;
     display: flex;
     align-items: center;
+    grid-area: playlist;
 }
 
 #playlist ul {
@@ -103,10 +106,9 @@ lottie-player {
 }
 
 #controles {
+    grid-area: controles;
     background-color: rgb(0, 0, 0, 0.7);
     width: 100%;
-    height: 150px;
-    position: fixed;
     bottom: 0;
     display: flex;
     justify-content: center;
@@ -163,6 +165,7 @@ lottie-player {
 .container-volume {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     z-index: 10;
     position: fixed;
     cursor: pointer;
@@ -173,7 +176,7 @@ lottie-player {
 }
 
 .volume-space {
-    width: 35px;
+    width: 18px;
 }
 
 .container-volume:hover :nth-child(2) {
@@ -185,7 +188,7 @@ lottie-player {
 .barra-volume {
     background-color: black;
     width: 0px;
-    height: 8px;
+    height: 10px;
     margin-left: 10px;
 }
 
@@ -216,3 +219,6 @@ button #play, #pause{
     cursor: pointer;
 }
 
+.fullscreen {
+    cursor: pointer;
+}

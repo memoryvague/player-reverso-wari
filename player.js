@@ -10,6 +10,7 @@ const barraProgresso = document.getElementById('barra-progresso')
 const btVolume = document.querySelector('.btVolume')
 const barraVolume = document.querySelector('.barra-volume')
 const barraVolumeFilled = document.querySelector('.barra-volume-filled')
+const fullScreen = document.querySelector('.fullscreen')
 
 const videos = document.getElementsByTagName( "li" )
 const videos_url = []
@@ -144,7 +145,7 @@ function autostart() {
     }
 }
 
-// Controles de Volume
+// Controle de Volume/Mudo
 btVolume.addEventListener('click', function(e) {
     if (video.volume > 0) {
         video.volume = 0
@@ -175,6 +176,7 @@ function tocaProximo() {
     }
 
 }
+
 function tocaAnterior() {
     const source = document.getElementById('source')
     const url = document.getElementById('source').getAttribute('src')
@@ -187,3 +189,9 @@ function tocaAnterior() {
     }
 }
 
+// Função Tela Cheia
+fullScreen.addEventListener('click', function openFullscreen() {
+    if (video.requestFullscreen) {
+        video.requestFullscreen()
+    }
+})

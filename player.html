@@ -10,12 +10,11 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
-    <div class="container">
 
         <section class="video-box">
             <video id="playerVideo" teste="20" controlsList="nodownload" onended="autostart()">
                 <source id="source" src="" type="video/mp4">
-            </video>
+            </video> 
         </section>
     
         <aside id="playlist">
@@ -119,8 +118,6 @@
             </ul>
         </aside>
 
-    </div>
-
     <footer id="controles">
         <div class="area-controles">
             <div w-progresso="playerVideo" class="progresso">
@@ -138,9 +135,12 @@
                         <img src="./imgs/volume.svg" alt="Volume">
                     </span>
                 
-                    <span class="barra-volume">
-                        <span class="barra-volume-filled"></span>
-                    </span>
+
+                        <span class="barra-volume">
+                            <span class="barra-volume-filled"></span>
+                        </span>
+
+            
                 </div>
                 <span class="volume-space"></span>
 
@@ -154,7 +154,7 @@
                     <img src="./imgs/next.svg" alt="Próximo" id="next" onclick="tocaProximo()">
                 </div>
 
-                <img src="./imgs/fullscreen.svg" alt="Tela Cheia" id="fullscreen">
+                <img src="./imgs/fullscreen.svg" alt="Tela Cheia" class="fullscreen">
             </div>
         </div>
     </footer>
