@@ -21,6 +21,7 @@ for(var i = 0; i < videos.length; i++)
 configurarVideo()
 
 function configurarVideo() {
+    source.setAttribute('src',videos_url[0])
     botaoPlay.onclick = function playPause() {
         if (video.paused) {
             botaoPlay.innerHTML = imgBtPause
