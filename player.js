@@ -33,6 +33,7 @@ function configurarVideo() {
     }
     video.volume = 0.7
     barraVolumeFilled.style.width = '70%'
+    video.load()
 }
 
 function selecionarVideo(id) {
